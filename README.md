@@ -12,10 +12,13 @@ and you wanted to rename them such as
     Image (02).jpg
     Image (03).jpg
     
-this script allows you to isolate only certain parts of the current name and add in your own name and conventions to the file names. This can also be modified to be used with counter variables if the current name of the files does not contain anything worth preserving. Some modification to the script is needed as some of the paths are hardcoded.  
+this script allows you to isolate only certain parts of the current name and add in your own name and conventions to the file names. This can also be modified to be used with counter variables if the current file names do not contain anything worth preserving. Some modification to the script is needed as some of the paths are hardcoded.  
 
 THE ORIGINAL FILES ARE OVERWRITTEN WITH THE NEW FILES. 
 
-Additionally, in some cases there may be an extra empty file produced in the final destination folder. 
+How to Use this program
+THIS PROGRAM ONLY WORKS FOR MAC OR *nix BASED COMPUTERS 
 
-Only the  NameChanger.py is necessary for this program and can be used alone. 
+1. Using your terminal or powershell, navigate to the folder where you have the files whose name you wish to change.
+2. If you are using a mac, remove the .DS_Store file
+3. Modify the paths in this program to suit your specific file paths
