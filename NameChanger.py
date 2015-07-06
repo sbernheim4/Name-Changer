@@ -10,9 +10,13 @@ sourceDir = listdir(sourcePath)
 for theFile in sourceDir:
     system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/NameChanger/")
 
-# renames the files 
+# renames the files
 for theFile in sourceDir:
 
     newName = "Image " + theFile[25:28] + ".jpg"
     print newName
     rename(theFile, newName)
+
+# removes the files with the old names from the source folder
+system("cd /Users/samuelbernheim/Desktop/FilesToRename/; rm *")
+
