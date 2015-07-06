@@ -1,3 +1,8 @@
+# This program renames files based on a desired output and information in the current name that you want to keep
+# preserved
+
+# CHECK THE SECOND TO LAST COMMENT BEFORE RUNNING
+
 __author__ = 'samuelbernheim'
 
 from os import listdir, rename, system
@@ -9,23 +14,28 @@ projPath = "/Users/samuelbernheim/Python/NameChanger/"
 sourceDir = listdir(sourcePath)
 projDir = listdir(projPath)
 
-# copies all the files from the source directory into the project
+# copies all the files from the source directory into the project directory for later manipulation [
 system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/NameChanger/")
+
+fileNumber = 004
 
 # renames the files
 for theFile in sourceDir:
 
-    newName = "Image " + theFile[21:24] + ".jpg"
+    newName = "File " + str(fileNumber) + ".jpg"
     print "New Name: " + newName
 
     rename(theFile, newName)
 
-# removes the files with the old names from the source folder
-system("cd /Users/samuelbernheim/Desktop/FilesToRename/; rm *")
+    fileNumber += 1
 
+
+# removes the files with the old names from the source folder
+system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
+
+# MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
 # copies all the files which begin with "Image" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/NameChanger/Image* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Python/NameChanger/File* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
-system("rm Image*")
-
+system("rm File*")
