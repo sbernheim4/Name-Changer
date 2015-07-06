@@ -7,7 +7,8 @@ sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename/"
 sourceDir = listdir(sourcePath)
 
 # copies the files from the source directory into the project directory
-system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/NameChanger/")
+for theFile in sourceDir:
+    system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/NameChanger/")
 
 # renames the files
 for theFile in sourceDir:
