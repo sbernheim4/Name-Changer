@@ -23,7 +23,6 @@ for theFile in sourceDir:
 # removes the files with the old names from the source folder
 system("cd /Users/samuelbernheim/Desktop/FilesToRename/; rm *")
 
-
 # copies all the files which begin with "Image" in the project folder, back to the source folder with the right name
 system("cp /Users/samuelbernheim/Python/NameChanger/Image* /Users/samuelbernheim/Desktop/FilesToRename/")
 
