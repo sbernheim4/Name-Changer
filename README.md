@@ -1,7 +1,7 @@
 # Name-Changer
 
 This program makes it easy to batch rename files based on a desired pattern which already exists within the names of 
-files or based on a simple numbering shceme. For example if you have 3 files named 
+files or based on a simple numbering scheme. For example if you have 3 files named 
 
     badFileName (01) createdby obnoxiousTextThatPeoplePut.jpg
     badFileName (02) createdby obnoxiousTextThatPeoplePut.jpg
