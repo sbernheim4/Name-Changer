@@ -1,7 +1,7 @@
 # This program renames files based on a desired output and information in the current name that you want to keep
 # preserved
 
-# CHECK THE SECOND TO LAST COMMENT BEFORE RUNNING
+# CHECK THE THIRD TO LAST COMMENT BEFORE RUNNING
 
 __author__ = 'samuelbernheim'
 
