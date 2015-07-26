@@ -38,22 +38,22 @@ fileNumber = 0
 # renames the files
 for theFile in sourceDir:
 
-    # if "Bat" in theFile:
-        # Enter here the new name of the files you wish. Use of the variable fileNumber can be used or a current part of
-        # the files' names
-    newName = "Batgirl/Robin - Year One (" + theFile[25:28] + ").jpg"
-    print "New Name: " + newName
+    if theFile != ".DS_Store":
+        newName = "Batgirl/Robin - Year One (" + theFile[25:28] + ").jpg"
+        print "New Name: " + theFile
 
-    # rename(theFile, newName)
+        rename(theFile, theFile)
 
-    fileNumber += 1
+        fileNumber += 1
 
-# removes the files with the old names from the source folder
-system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
+if theFile != ".DS_Store":
 
-# MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
-# copies all the files which begin with "Image" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/Name-Changer/Bat* /Users/samuelbernheim/Desktop/FilesToRename/")
+    # removes the files with the old names from the source folder
+    system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 
-# removes the files from the project folder
-system("rm Bat*")
+    # MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
+    # copies all the files which begin with "Image" in the project folder, into the source folder with the right name
+    system("cp /Users/samuelbernheim/Python/Name-Changer/Bat* /Users/samuelbernheim/Desktop/FilesToRename/")
+
+    # removes the files from the project folder
+    system("rm Bat*")
