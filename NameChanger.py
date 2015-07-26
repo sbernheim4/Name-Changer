@@ -9,12 +9,12 @@ from os import listdir, rename, system, path
 import sys
 
 # checks to see if there is a folder on the desktop named FilesToRename
-if path.isdir("/Users/samuelbernheim/Desktop/FilesToRename/"):
-    print "folder exists"
+if path.isdir("/Users/samuelbernheim/Desktop/FilesToRename"):
+    print "Source folder exists"
 else:
-    print "No such folder found"
+    print "Source folder does not exist"
     print "Making folder"
-    system("cd /Users/samuelbernheim/Desktop/; mkdir FilesToRename")
+    system("cd /Users/samuelbernheim/Desktop/; mkdir FilesToRename;")
     print "Folder was created."
     print "Please transfer the files whose names you wish to change into /Users/samuelbernheim/Desktop/FilesToRename/" \
           " and then rerun this script."
@@ -25,23 +25,23 @@ else:
 sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename/"
 
 # path of this project folder where files will be copied to for the name change
-projPath = "/Users/samuelbernheim/Python/NameChanger/"
+projPath = "/Users/samuelbernheim/Python/Name-Changer/"
 
 sourceDir = listdir(sourcePath)  # directory of the files' current location
 projDir = listdir(projPath)  # directory of this project
 
-
 # copies all the files from the source directory into the project directory for later manipulation [
-system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/NameChanger/")
+system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/Name-Changer/")
 
-fileNumber = 1
+fileNumber = 0
 
 # renames the files
 for theFile in sourceDir:
 
-    # Enter here the new name of the files you wish. Use of the variable fileNumber can be used or a current part of the
-    # files' names
-    newName = "Batman - A Death in the Family (" + str(fileNumber) + ").jpg"
+    # if "Bat" in theFile:
+        # Enter here the new name of the files you wish. Use of the variable fileNumber can be used or a current part of
+        # the files' names
+    newName = "Batgirl/Robin - Year One (" + theFile[25:28] + ").jpg"
     print "New Name: " + newName
 
     rename(theFile, newName)
@@ -53,7 +53,7 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 
 # MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
 # copies all the files which begin with "Image" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/NameChanger/Batman* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Python/Name-Changer/Bat* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
-system("rm Batman*")
+system("rm Bat*")
