@@ -31,4 +31,5 @@ THIS PROGRAM ONLY WORKS FOR MAC OR *nix BASED COMPUTERS
 6. Read the third to last comment before running 
 
 Limitations 
+
 1. The new file name cannot include the / character
