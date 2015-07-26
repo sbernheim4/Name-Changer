@@ -29,3 +29,6 @@ THIS PROGRAM ONLY WORKS FOR MAC OR *nix BASED COMPUTERS
 4. Type your desired name in the python file in the newName variable
 5. Make sure all the path names are correct 
 6. Read the third to last comment before running 
+
+Limitations 
+1. The new file name cannot include the / character
