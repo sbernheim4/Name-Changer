@@ -44,7 +44,7 @@ for theFile in sourceDir:
     newName = "Batgirl/Robin - Year One (" + theFile[25:28] + ").jpg"
     print "New Name: " + newName
 
-    rename(theFile, newName)
+    # rename(theFile, newName)
 
     fileNumber += 1
 
