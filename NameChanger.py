@@ -36,17 +36,23 @@ system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/P
 fileNumber = 0
 
 # renames the files
-for theFile in sourceDir:
+for eachFile in sourceDir:
 
-    if theFile != ".DS_Store":
-        newName = "Batgirl/Robin - Year One (" + theFile[25:28] + ").jpg"
-        print "New Name: " + theFile
+    if eachFile != ".DS_Store":
 
-        rename(theFile, theFile)
+        # if using fileNumber, use this if statement to have the same number of digits ex: going from 09 to 10
+        if fileNumber < 10:
+            newName = "Batman - The Killing Joke (0" + str(fileNumber) + ").jpg"
+        else:
+            newName = "Batman - The Killing Joke (" + str(fileNumber) + ").jpg"
+
+        print "New Name: " + newName
+
+        rename(eachFile, newName)
 
         fileNumber += 1
 
-if theFile != ".DS_Store":
+if eachFile != ".DS_Store":
 
     # removes the files with the old names from the source folder
     system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
