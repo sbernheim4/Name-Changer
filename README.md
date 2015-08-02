@@ -23,12 +23,11 @@ THE ORIGINAL FILES ARE OVERWRITTEN WITH THE NEW FILES.
 How to Use this program
 THIS PROGRAM ONLY WORKS FOR MAC OR *nix BASED COMPUTERS 
 
-1. Open this in PyCharm 
-2. If you are using a mac, remove the .DS_Store file
-3. Modify the paths in this program to suit your specific file paths
-4. Type your desired name in the python file in the newName variable
-5. Make sure all the path names are correct 
-6. Read the third to last comment before running 
+1. If you are using a mac, remove the .DS_Store file
+2. Modify the paths in this program to suit your specific file paths
+3. Type your desired name in the python file in the newName variable
+4. Make sure all the path names are correct 
+5. Read the third to last comment before running 
 
 Limitations 
 
