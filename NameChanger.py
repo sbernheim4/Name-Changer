@@ -33,7 +33,7 @@ projDir = listdir(projPath)  # directory of this project
 # copies all the files from the source directory into the project directory for later manipulation [
 system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/Name-Changer/")
 
-fileNumber = 0
+fileNumber = 1
 
 # renames the files
 for eachFile in sourceDir:
@@ -42,9 +42,9 @@ for eachFile in sourceDir:
 
         # if using fileNumber, use this if statement to have the same number of digits ex: going from 09 to 10
         if fileNumber < 10:
-            newName = "Batman - The Killing Joke (0" + str(fileNumber) + ").jpg"
+            newName = "Attack on Titan - S01E0" + str(fileNumber) + ".mp4"
         else:
-            newName = "Batman - The Killing Joke (" + str(fileNumber) + ").jpg"
+            newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
 
         print "New Name: " + newName
 
@@ -52,14 +52,13 @@ for eachFile in sourceDir:
 
         fileNumber += 1
 
-if eachFile != ".DS_Store":
 
-    # removes the files with the old names from the source folder
-    system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
+# removes the files with the old names from the source folder
+system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 
-    # MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
-    # copies all the files which begin with "Image" in the project folder, into the source folder with the right name
-    system("cp /Users/samuelbernheim/Python/Name-Changer/Bat* /Users/samuelbernheim/Desktop/FilesToRename/")
+# MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
+# copies all the files which begin with "Image" in the project folder, into the source folder with the right name
+system("cp /Users/samuelbernheim/Python/Name-Changer/Attack* /Users/samuelbernheim/Desktop/FilesToRename/")
 
-    # removes the files from the project folder
-    system("rm Bat*")
+# removes the files from the project folder
+system("rm Attack*")
