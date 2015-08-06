@@ -41,11 +41,10 @@ for eachFile in sourceDir:
     if eachFile != ".DS_Store":
 
         # if using fileNumber, use this if statement to have the same number of digits ex: going from 09 to 10
-        # if fileNumber < 10:
-        fileNameSize = len(eachFile) - 4
-        newName = "Teen Titans - S0" + eachFile[14:15] + "E" +  eachFile[16:18] + " - " + eachFile[25:fileNameSize] + ".avi"
+        if fileNumber < 10:
+            newName = "Attack on Titan - S01E0" + str(fileNumber) + ".mp4"
         # else:
-            # newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
+            newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
 
         print "New Name: " + newName
 
