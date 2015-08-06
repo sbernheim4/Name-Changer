@@ -41,10 +41,11 @@ for eachFile in sourceDir:
     if eachFile != ".DS_Store":
 
         # if using fileNumber, use this if statement to have the same number of digits ex: going from 09 to 10
-        if fileNumber < 10:
-            newName = "Attack on Titan - S01E0" + str(fileNumber) + ".mp4"
-        else:
-            newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
+        # if fileNumber < 10:
+        fileNameSize = len(eachFile) - 4
+        newName = "Teen Titans - S0" + eachFile[14:15] + "E" +  eachFile[16:18] + " - " + eachFile[25:fileNameSize] + ".avi"
+        # else:
+            # newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
 
         print "New Name: " + newName
 
@@ -58,7 +59,7 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 
 # MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL.
 # copies all the files which begin with "Image" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/Name-Changer/Attack* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Python/Name-Changer/Teen* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
-system("rm Attack*")
+system("rm Teen*")
