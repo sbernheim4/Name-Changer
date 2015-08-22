@@ -120,3 +120,6 @@ system("cp /Users/samuelbernheim/Python/Name-Changer/The* /Users/samuelbernheim/
 
 # removes the files from the project folder
 system("rm The*")
+
+
+print "Program completed"
