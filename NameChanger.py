@@ -76,6 +76,7 @@ def getTheFullTitle(rawNameOfEpisode, nameOfShow):
     # variable for the title of the episode
     titleOfEpisode = usableName[0:currentPosition-2]
     titleOfEpisode = removeUnderscoresFromName(titleOfEpisode)
+    titleOfEpisode = removePeriodsFromName(titleOfEpisode)
     print "Episode Title: " + titleOfEpisode
 
     # this way either variable can be used and the same 3result will be output
@@ -131,7 +132,7 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 # TODO: MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL TO THE FIRST WORD OF FIRST
 # TODO: FEW LETTERS OF WHAT EVERY FILE WILL BEGIN WITH.
 
-# copies all the files which begin with "Image" in the project folder, into the source folder with the right name
+# copies all the files which begin with "Cow" in the project folder, into the source folder with the right name
 system("cp /Users/samuelbernheim/Python/Name-Changer/Cow* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
