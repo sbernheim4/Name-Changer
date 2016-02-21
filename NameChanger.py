@@ -49,28 +49,29 @@ def removeUnderscoresFromName(name):
 # Test this before hand in a separate python file to make sure the output is correct
 def getTheFullTitle(rawNameOfEpisode, nameOfShow):
 
+
+    # THIS SECTION IS FOR GETTING THE EPISODE INFO LIKE S02E05
     # TODO: Modify this variable to make sure the numbers are correct for your specific batch of files.
-    episodeInfo = rawNameOfEpisode[21:31]
-
+    episodeInfo = rawNameOfEpisode[1:3]
     episodeInfoLength = len(episodeInfo)
-    episodeInfo = "S01E" + episodeInfo[-2:episodeInfoLength]
+    episodeInfo = "S01E" + episodeInfo[0:episodeInfoLength]
 
-    print "Episode Info: " + episodeInfo
 
+    # THIS SECTION GETS THE PART OF THE TITLE FROM AFTER THE EPISODE INFO (S01E01) TO THE END OF THE NAME
     # TODO: This line must be modified for every new set that will use this function
-    # gets the part of the title from after the episode info (S01E01) to the end of the name
     nameSize = len(rawNameOfEpisode)
-    usableName = rawNameOfEpisode[34:nameSize]
+    usableName = rawNameOfEpisode[22:nameSize]
     print "Usable Name: " + usableName
 
+
+    # THIS SECTION GETS THE INDEX OF WHERE THE TITLE OF THE EPISODE ENDS
     # counter variable
     currentPosition = 0
-
     # TODO: Modify this code for every new batch run.
     # parses through the usableName to find the first toccurence of 1 which would be in 1080p and gets that position
     for letter in usableName:
         currentPosition = currentPosition + 1
-        if letter == "[":
+        if letter == "1":
             break
 
     # variable for the title of the episode
@@ -79,7 +80,7 @@ def getTheFullTitle(rawNameOfEpisode, nameOfShow):
     titleOfEpisode = removePeriodsFromName(titleOfEpisode)
     print "Episode Title: " + titleOfEpisode
 
-    # this way either variable can be used and the same 3result will be output
+    # this way either variable can be used and the same result will be output
     fullName = nameOfShow + " - " + episodeInfo + " - " + titleOfEpisode + ".mkv"
 
     return fullName
@@ -101,6 +102,7 @@ fileNumber = 1
 
 nameOfShow = raw_input("Enter the name of the show\n")
 
+
 # renames the files
 for eachFile in sourceDir:
 
@@ -120,6 +122,8 @@ for eachFile in sourceDir:
         newName = getTheFullTitle(eachFile, nameOfShow)
 
         print newName
+        print
+        print
 
         # comment this line out before running to see if the names are correct.
         rename(eachFile, newName)
@@ -133,9 +137,9 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 # TODO: FEW LETTERS OF WHAT EVERY FILE WILL BEGIN WITH.
 
 # copies all the files which begin with "Cow" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/Name-Changer/Cow* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Python/Name-Changer/Rick* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
-system("rm Cow*")
+system("rm Rick*")
 
 print "Program completed"
