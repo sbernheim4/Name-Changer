@@ -49,17 +49,17 @@ def removeUnderscoresFromName(name):
 # Test this before hand in a separate python file to make sure the output is correct
 def getTheFullTitle(rawNameOfEpisode, nameOfShow):
 
+    nameSize = len(rawNameOfEpisode)
+
     # THIS SECTION IS FOR GETTING THE EPISODE INFO LIKE S02E05
     # TODO: Modify this variable to make sure the numbers are correct for your specific batch of files.
     episodeInfo = rawNameOfEpisode[16:22]
-    # episodeInfoLength = len(episodeInfo)
-    # episodeInfo = "S01E" + episodeInfo[0:episodeInfoLength]
+    print "Episode Info: " + episodeInfo
 
 
     # THIS SECTION GETS THE PART OF THE TITLE FROM AFTER THE EPISODE INFO (S01E01) TO THE END OF THE NAME
     # TODO: This line must be modified for every new set that will use this function
-    nameSize = len(rawNameOfEpisode)
-    usableName = rawNameOfEpisode[16:nameSize]
+    usableName = rawNameOfEpisode[23:nameSize]
     print "Usable Name: " + usableName
 
 
@@ -80,27 +80,26 @@ def getTheFullTitle(rawNameOfEpisode, nameOfShow):
     print "Episode Title: " + titleOfEpisode
 
     # this way either variable can be used and the same result will be output
-    fullName = nameOfShow + " - " + episodeInfo + " - " + titleOfEpisode + ".mkv"
+    fullName = nameOfShow + " - " + episodeInfo + " - " + titleOfEpisode +  ".mkv"
 
     return fullName
 
 
 # path of the directory which houses the files whose names will be changed
-sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename/"
+sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename"
 
 # path of this project folder where files will be copied to for the name change
-projPath = "/Users/samuelbernheim/ Projects/Name-Changer"
+projPath = "/Users/samuelbernheim/Github-Projects/Name-Changer"
 
 sourceDir = listdir(sourcePath)  # directory of the files' current location
 projDir = listdir(projPath)  # directory of this project
 
 # copies all the files from the source directory into the project directory for later manipulation [
-system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Github\ Projects//Desktop/Name-Changer/")
+system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Github-Projects/Name-Changer/")
 
 fileNumber = 1
 
 nameOfShow = raw_input("Enter the name of the show\n")
-
 
 # renames the files
 for eachFile in sourceDir:
@@ -122,11 +121,11 @@ for eachFile in sourceDir:
 
         print newName
         print
-        print
 
         # comment this line out before running to see if the names are correct.
         rename(eachFile, newName)
 
+        # fileNumber is used in the if statement above.
         fileNumber += 1
 
 # removes the files with the old names from the source folder
@@ -136,7 +135,7 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 # TODO: FEW LETTERS OF WHAT EVERY FILE WILL BEGIN WITH.
 
 # copies all the files which begin with "Cow" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Github\ Projects//Name-Changer/Game* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Github-Projects//Name-Changer/Game* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
 system("rm Game*")
