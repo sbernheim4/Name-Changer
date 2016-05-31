@@ -49,18 +49,17 @@ def removeUnderscoresFromName(name):
 # Test this before hand in a separate python file to make sure the output is correct
 def getTheFullTitle(rawNameOfEpisode, nameOfShow):
 
-
     # THIS SECTION IS FOR GETTING THE EPISODE INFO LIKE S02E05
     # TODO: Modify this variable to make sure the numbers are correct for your specific batch of files.
-    episodeInfo = rawNameOfEpisode[1:3]
-    episodeInfoLength = len(episodeInfo)
-    episodeInfo = "S01E" + episodeInfo[0:episodeInfoLength]
+    episodeInfo = rawNameOfEpisode[16:22]
+    # episodeInfoLength = len(episodeInfo)
+    # episodeInfo = "S01E" + episodeInfo[0:episodeInfoLength]
 
 
     # THIS SECTION GETS THE PART OF THE TITLE FROM AFTER THE EPISODE INFO (S01E01) TO THE END OF THE NAME
     # TODO: This line must be modified for every new set that will use this function
     nameSize = len(rawNameOfEpisode)
-    usableName = rawNameOfEpisode[22:nameSize]
+    usableName = rawNameOfEpisode[16:nameSize]
     print "Usable Name: " + usableName
 
 
@@ -90,13 +89,13 @@ def getTheFullTitle(rawNameOfEpisode, nameOfShow):
 sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename/"
 
 # path of this project folder where files will be copied to for the name change
-projPath = "/Users/samuelbernheim/Python/Name-Changer/"
+projPath = "/Users/samuelbernheim/ Projects/Name-Changer"
 
 sourceDir = listdir(sourcePath)  # directory of the files' current location
 projDir = listdir(projPath)  # directory of this project
 
 # copies all the files from the source directory into the project directory for later manipulation [
-system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Python/Name-Changer/")
+system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Github\ Projects//Desktop/Name-Changer/")
 
 fileNumber = 1
 
@@ -137,9 +136,9 @@ system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
 # TODO: FEW LETTERS OF WHAT EVERY FILE WILL BEGIN WITH.
 
 # copies all the files which begin with "Cow" in the project folder, into the source folder with the right name
-system("cp /Users/samuelbernheim/Python/Name-Changer/Rick* /Users/samuelbernheim/Desktop/FilesToRename/")
+system("cp /Users/samuelbernheim/Github\ Projects//Name-Changer/Game* /Users/samuelbernheim/Desktop/FilesToRename/")
 
 # removes the files from the project folder
-system("rm Rick*")
+system("rm Game*")
 
 print "Program completed"
