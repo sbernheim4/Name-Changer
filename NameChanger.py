@@ -46,13 +46,21 @@ def removeUnderscoresFromName(name):
     return duplicate
 
 def showExample(name):
+    # the spacing allows for only 56 characters in a sample name to fit naturally on the terminal screen
+    # when it is at full size. Otherwise make the screen bigger.
+    i = 0
     for letter in name:
-        print letter,
+        if i < 10:
+            sys.stdout.write(letter + " ")
+        else:
+            # print one extra space after letter since num will now take up two spaces instead of just one
+            sys.stdout.write(letter + "  ")
+        i = i+1
 
     print
 
-    for num in range(40):
-        print num,
+    for num in range(56):
+            sys.stdout.write(str(num) + " ")
 
     print
 # Use this function if the current names of your files contain specific attributes like individual names
