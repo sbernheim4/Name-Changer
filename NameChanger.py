@@ -45,21 +45,30 @@ def removeUnderscoresFromName(name):
             duplicate = duplicate + letter
     return duplicate
 
+def showExample(name):
+    for letter in name:
+        print letter,
+
+    print
+
+    for num in range(40):
+        print num,
+
+    print
 # Use this function if the current names of your files contain specific attributes like individual names
 # Test this before hand in a separate python file to make sure the output is correct
-def getTheFullTitle(rawNameOfEpisode, nameOfShow):
+def getTheFullTitle(rawNameOfEpisode, nameOfShow, episodeInfoIndexOne, episodeInfoIndexTwo, usableNameIndex):
 
     nameSize = len(rawNameOfEpisode)
 
     # THIS SECTION IS FOR GETTING THE EPISODE INFO LIKE S02E05
-    # TODO: Modify this variable to make sure the numbers are correct for your specific batch of files.
-    episodeInfo = rawNameOfEpisode[16:22]
+    episodeInfo = rawNameOfEpisode[episodeInfoIndexOne:episodeInfoIndexTwo]
     print "Episode Info: " + episodeInfo
 
 
-    # THIS SECTION GETS THE PART OF THE TITLE FROM AFTER THE EPISODE INFO (S01E01) TO THE END OF THE NAME
+    # THIS SECTION GETS THE EPISODE TITLE FROM, THIS USUALLY COMES AFTER THE EPISODE INFO
     # TODO: This line must be modified for every new set that will use this function
-    usableName = rawNameOfEpisode[23:nameSize]
+    usableName = rawNameOfEpisode[usableNameIndex:nameSize]
     print "Usable Name: " + usableName
 
 
@@ -97,9 +106,11 @@ projDir = listdir(projPath)  # directory of this project
 # copies all the files from the source directory into the project directory for later manipulation [
 system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Github-Projects/Name-Changer/")
 
+# Established outside the below for loop so they act more as constants that cannot be reset
+# inside the loop
 fileNumber = 1
-
 nameOfShow = raw_input("Enter the name of the show\n")
+firstFile = True
 
 # renames the files
 for eachFile in sourceDir:
@@ -117,7 +128,20 @@ for eachFile in sourceDir:
         #
         # print "New Name: " + newName
 
-        newName = getTheFullTitle(eachFile, nameOfShow)
+        episodeInfoIndexOne = 0
+        episodeInfoIndexTwo = 0
+        usableNameIndex = 0
+
+        if firstFile:
+            showExample(eachFile)
+            episodeInfoIndexOne = int(raw_input("Enter the index of where the episode info begins\n"))
+            episodeInfoIndexTwo = int(raw_input("Enter the index of where the episode info ends\n"))
+            usableNameIndex = int(raw_input("Enter the index where the title begins\n"))
+            firstFile = False
+
+
+
+        newName = getTheFullTitle(eachFile, nameOfShow, episodeInfoIndexOne, episodeInfoIndexTwo, usableNameIndex)
 
         print newName
         print
@@ -139,5 +163,7 @@ system("cp /Users/samuelbernheim/Github-Projects//Name-Changer/Game* /Users/samu
 
 # removes the files from the project folder
 system("rm Game*")
+# TODO: Experiment with using the %s placeholder so this does not have to be changed in the .py file
+# print "My name is %s and weight is %d kg!" % ('Zara', 21)
 
 print "Program completed"
