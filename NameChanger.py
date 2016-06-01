@@ -33,7 +33,7 @@ def removePeriodsFromName(name):
             duplicate = duplicate + letter
     return duplicate
 
-
+# goes through the name and replaces all "_" with " "
 def removeUnderscoresFromName(name):
     currentPosition = 0
     duplicate = ""
@@ -51,18 +51,18 @@ def showExample(name):
     i = 0
     for letter in name:
         if i < 10:
+            # using sys.stdout.write to control the exact spacing and to have everything print on one line
             sys.stdout.write(letter + " ")
         else:
             # print one extra space after letter since num will now take up two spaces instead of just one
             sys.stdout.write(letter + "  ")
         i = i+1
-
     print
-
     for num in range(56):
             sys.stdout.write(str(num) + " ")
 
     print
+
 # Use this function if the current names of your files contain specific attributes like individual names
 # Test this before hand in a separate python file to make sure the output is correct
 def getTheFullTitle(rawNameOfEpisode, nameOfShow, episodeInfoIndexOne, episodeInfoIndexTwo, usableNameIndex):
@@ -101,17 +101,13 @@ def getTheFullTitle(rawNameOfEpisode, nameOfShow, episodeInfoIndexOne, episodeIn
 
     return fullName
 
-
-# path of the directory which houses the files whose names will be changed
-sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename"
-
-# path of this project folder where files will be copied to for the name change
-projPath = "/Users/samuelbernheim/Github-Projects/Name-Changer"
+sourcePath = "/Users/samuelbernheim/Desktop/FilesToRename" # path of the directory which houses the files whose names will be changed
+projPath = "/Users/samuelbernheim/Github-Projects/Name-Changer" # path of this project folder where files will be copied to for the name change
 
 sourceDir = listdir(sourcePath)  # directory of the files' current location
 projDir = listdir(projPath)  # directory of this project
 
-# copies all the files from the source directory into the project directory for later manipulation [
+# copies all the files from the source directory into the project directory for later manipulation
 system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/Github-Projects/Name-Changer/")
 
 # Established outside the below for loop so they act more as constants that cannot be reset
@@ -125,8 +121,7 @@ for eachFile in sourceDir:
 
     # if the file name does not contain any information you wish to preserve use the following if block. Otherwise use
     # the getTheFullTitle function. Just be sure to run that using an example name before running this program on your
-    # batch of files.
-
+    # batch of files. Do not use both the if block and the getTheFullTitle function.
     if eachFile != ".DS_Store":
         # # if using fileNumber, use this if statement to have the same number of digits ex: going from 09 to 10
         # if fileNumber < 10:
@@ -160,8 +155,7 @@ for eachFile in sourceDir:
         # fileNumber is used in the if statement above.
         fileNumber += 1
 
-# removes the files with the old names from the source folder
-system("rm /Users/samuelbernheim/Desktop/FilesToRename/*")
+system("rm /Users/samuelbernheim/Desktop/FilesToRename/*") # removes the files with the old names from the source folder
 
 # TODO: MATCH THE END OF THE FIRST PATH OF THE NEXT SYSTEM CALL AND THE SECOND SYSTEM CALL TO THE FIRST WORD OF FIRST
 # TODO: FEW LETTERS OF WHAT EVERY FILE WILL BEGIN WITH.
