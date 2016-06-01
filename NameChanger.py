@@ -114,6 +114,9 @@ system("cp /Users/samuelbernheim/Desktop/FilesToRename/* /Users/samuelbernheim/G
 # inside the loop
 fileNumber = 1
 nameOfShow = raw_input("Enter the name of the show\n")
+episodeInfoIndexOne = 0
+episodeInfoIndexTwo = 0
+usableNameIndex = 0
 firstFile = True
 
 # renames the files
@@ -130,10 +133,6 @@ for eachFile in sourceDir:
         #     newName = "Attack on Titan - S01E" + str(fileNumber) + ".mp4"
         #
         # print "New Name: " + newName
-
-        episodeInfoIndexOne = 0
-        episodeInfoIndexTwo = 0
-        usableNameIndex = 0
 
         if firstFile:
             showExample(eachFile)
